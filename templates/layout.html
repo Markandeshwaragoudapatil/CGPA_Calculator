@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Layout{% endblock %}</title>
+    <style>
+        table, th, td {
+            border: 1px solid black; /* Draws lines */
+            border-collapse: collapse; /* Merges borders */
+            padding: 8px; /* Adds space inside cells */
+        }
+  </style>
+</head>
+<body>
+    {% block body %}
+        <h1>Layout</h1>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="table-for-displaying-details">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sem</th>
+                    <th>Credits</th>
+                    <th>SGPA</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(length) %}
+                    <tr>
+                        <th>{{i+1}}</th>
+                        <th>{{session['credits'][i]}}</th>
+                        <th>{{session['sgpas'][i]}}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="result-display">
+        <h3 style="color: palevioletred;">Total CGPA : {{total|round(2)}}</h3>
+    </div>
+
+{% endblock %}

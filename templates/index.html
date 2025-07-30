@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% if length>0 %}
+        <div class="stored">
+            {% for i in range(length) %}
+                <div style="margin-bottom: 10px;" class="inputs">
+                    Credits : <input type="text" value="{{session['credits'][i]}}" disabled>
+                    SGPA : <input type="text" value="{{session['sgpas'][i]}}" disabled>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form action="/calculate" method="post" style="margin-bottom: 20px;">
+        <div style="margin-bottom: 10px;" class="inputs">
+            Credits : <input type="text" name="credit" autocomplete="off">
+            SGPA : <input type="text" name="sgpa" autocomplete="off">
+        </div>
+        <div class="buttons">
+            <button type="submit" name="decide" value="add">Add</button>
+            <button type="submit" name="decide" value="calculate">Calculate</button>
+        </div> 
+    </form>
+    <a href="/newCalculation">New</a>
+
+{% endblock %}
