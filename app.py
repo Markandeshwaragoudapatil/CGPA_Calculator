@@ -19,6 +19,12 @@ def calculate():
         decide=request.form.get("decide")
         sgpa=request.form.get('sgpa')
         credit=request.form.get('credit')
+        
+        # when user want to calculate total even after adding added button
+        if (not sgpa or not credit) and (decide=='calculate' and 'credits' in session):
+            return calculate_cgpa(session['credits'],session['sgpas'])
+        
+
         if not sgpa or not credit or not decide:
             return redirect("/")
         
