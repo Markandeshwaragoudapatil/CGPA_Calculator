@@ -1,0 +1,5 @@
+CREATE TABLE USERS IF NOT EXISTS(
+    userID INT PRIMARY KEY,
+    userName CHAR(20) UNIQUE,
+    password CHAR(10) NOT NULL
+);
